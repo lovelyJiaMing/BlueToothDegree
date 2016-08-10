@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/k40_tongyongbg_1mh"
+    tools:context="com.demo.bluetoothdegree.MainActivity">
+
+    <TextView
+        android:id="@+id/discover1"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:background="#7f897fff"
+        android:text="点击搜索蓝牙设备"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"></TextView>
+
+    <ListView
+        android:id="@+id/listview1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/discover1"
+        android:layout_marginTop="10dp"></ListView>
+
+    <TextView
+        android:id="@+id/discover2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="搜索中..."
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/discover1"
+        android:textSize="12sp"></TextView>
+
+</RelativeLayout>

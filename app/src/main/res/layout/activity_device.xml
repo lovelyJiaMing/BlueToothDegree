@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/k40_tongyongbg_6mh">
+
+    <LinearLayout
+        android:id="@+id/operatetai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/bounddev"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="#7fff2300"
+            android:gravity="center"
+            android:text="绑定设备"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"></TextView>
+
+        <TextView
+            android:id="@+id/connectdev"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="#7fff2300"
+            android:gravity="center"
+            android:text="连接设备"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"></TextView>
+
+        <TextView
+            android:id="@+id/unbounddev"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="#7fff2300"
+            android:gravity="center"
+            android:text="解除绑定"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"></TextView>
+
+        <TextView
+            android:id="@+id/disconnectdev"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="#7fff2300"
+            android:gravity="center"
+            android:text="断开连接"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"></TextView>
+
+        <TextView
+            android:id="@+id/locationzero"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="#7fff2300"
+            android:gravity="center"
+            android:text="位置校零"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"></TextView>
+
+        <TextView
+            android:id="@+id/recorddata"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="#7fff2300"
+            android:gravity="center"
+            android:text="数据记录"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"></TextView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/devname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:text="设备名称："
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/devname1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/devname"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/devname"
+        android:layout_toRightOf="@+id/devname"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/jianqingjiao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/currentlocation"
+        android:layout_marginTop="31dp"
+        android:text="肩倾角"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/jianqingjiao1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/currentlocation"
+        android:layout_alignRight="@+id/currentlocation"
+        android:layout_alignTop="@+id/jianqingjiao"
+        android:text="TextView"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/xiahejiao1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/jianqingjiao1"
+        android:layout_alignStart="@+id/jianqingjiao1"
+        android:layout_alignTop="@+id/xiahejiao"
+        android:text="TextView"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/jianqingjiao2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/jianqingjiao1"
+        android:layout_alignLeft="@+id/jiaozhunlocation"
+        android:layout_alignStart="@+id/jiaozhunlocation"
+        android:text="TextView"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/xiahejiao2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/xiahejiao1"
+        android:layout_alignLeft="@+id/jianqingjiao2"
+        android:layout_alignStart="@+id/jianqingjiao2"
+        android:text="TextView"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/mianzhuanjiao2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/xiahejiao2"
+        android:layout_alignStart="@+id/xiahejiao2"
+        android:layout_alignTop="@+id/mianzhuanjiao"
+        android:text="TextView"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/mianzhuanjiao1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/mianzhuanjiao"
+        android:layout_alignBottom="@+id/mianzhuanjiao"
+        android:layout_alignLeft="@+id/xiahejiao1"
+        android:layout_alignStart="@+id/xiahejiao1"
+        android:text="TextView"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/mianzhuanjiao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/xiahejiao"
+        android:layout_marginTop="52dp"
+        android:text="面转角"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/xiahejiao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/jianqingjiao"
+        android:layout_marginTop="57dp"
+        android:text="下颌角"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+
+    <TextView
+        android:id="@+id/jiaozhunlocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/currentlocation"
+        android:layout_alignBottom="@+id/currentlocation"
+        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp"
+        android:layout_toEndOf="@+id/currentlocation"
+        android:layout_toRightOf="@+id/currentlocation"
+        android:text="校准位置"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/currentlocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/devname1"
+        android:layout_marginTop="38dp"
+        android:layout_toEndOf="@+id/devname"
+        android:layout_toRightOf="@+id/devname"
+        android:text="当前位置"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <ListView
+        android:id="@+id/recordlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_above="@id/operatetai"
+        android:layout_below="@id/mianzhuanjiao" />
+
+</RelativeLayout>

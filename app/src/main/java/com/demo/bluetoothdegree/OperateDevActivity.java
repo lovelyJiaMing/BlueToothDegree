@@ -305,12 +305,34 @@ public class OperateDevActivity extends Activity {
             m_tvMianZhuan1.setText(sMianZ + "°");
         } else {
             //按下过后，减法，然后显示在2上
-            s1 = String.format("%.1f", (Double.parseDouble(sXiaH) - Double.parseDouble(sRecordXiaH)));
-            s2 = String.format("%.1f", (Double.parseDouble(sJianQ) - Double.parseDouble(sRecordJianQ)));
-            s3 = String.format("%.1f", (Double.parseDouble(sMianZ) - Double.parseDouble(sRecordMianZ)));
-            m_tvJianQing2.setText(s1 + "°");
-            m_tvXiaHe2.setText(s2 + "°");
-            m_tvMianZhuan2.setText(s3 + "°");
+            String sminus1;
+            double minus1 = (Double.parseDouble(sXiaH) - Double.parseDouble(sRecordXiaH));
+            if (minus1 > 0)
+                sminus1 = "下";
+            else
+                sminus1 = "上";
+
+            String sminus2;
+            double minus2 = (Double.parseDouble(sJianQ) - Double.parseDouble(sRecordJianQ));
+            if (minus2 > 0)
+                sminus2 = "左";
+            else
+                sminus2 = "右";
+
+            String sminus3;
+            double minus3 = (Double.parseDouble(sMianZ) - Double.parseDouble(sRecordMianZ));
+            if (minus3 > 0)
+                sminus3 = "左";
+            else
+                sminus3 = "右";
+            //
+            s1 = String.format("%.1f", Math.abs(minus1));
+            s2 = String.format("%.1f", Math.abs(minus2));
+            s3 = String.format("%.1f", Math.abs(minus3));
+            //
+            m_tvJianQing2.setText(s1 + "°" + sminus1);
+            m_tvXiaHe2.setText(s2 + "°" + sminus2);
+            m_tvMianZhuan2.setText(s3 + "°" + sminus3);
         }
     }
 

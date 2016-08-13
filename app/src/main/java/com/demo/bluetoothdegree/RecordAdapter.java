@@ -23,7 +23,7 @@ public class RecordAdapter extends BaseAdapter {
     }
 
     public void setData(RecordItem item) {
-        arrayList.add(item);
+        arrayList.add(0, item);
         notifyDataSetChanged();
     }
 

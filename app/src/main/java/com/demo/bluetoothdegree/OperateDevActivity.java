@@ -130,6 +130,9 @@ public class OperateDevActivity extends Activity {
         m_tvConnectDev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (mSocket != null) {
+                    return;
+                }
                 final String SPP_UUID = "00001101-0000-1000-8000-00805F9B34FB";
                 UUID uuid = UUID.fromString(SPP_UUID);
                 try {
@@ -166,6 +169,9 @@ public class OperateDevActivity extends Activity {
                 try {
                     m_bThreadRun = false;
                     mSocket.close();
+                    mSocket = null;
+                    myInStream = null;
+                    disconnectReset();
                     Toast.makeText(OperateDevActivity.this, "已断开连接", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -196,9 +202,9 @@ public class OperateDevActivity extends Activity {
                 RecordAdapter.RecordItem item = adapter.new RecordItem();
                 SimpleDateFormat myFmt2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 item.time = myFmt2.format(new Date());
-                item.JianQing = s1;
-                item.XiaHe = s2;
-                item.MianZhuan = s3;
+                item.JianQing = m_tvJianQing2.getText().toString();
+                item.XiaHe = m_tvXiaHe2.getText().toString();
+                item.MianZhuan = m_tvMianZhuan2.getText().toString();
                 adapter.setData(item);
             }
         });
@@ -311,7 +317,7 @@ public class OperateDevActivity extends Activity {
             m_tvXiaHe1.setText(sJianQ + "°");
             m_tvMianZhuan1.setText(sMianZ + "°");
         } else {
-//如果突然又按下了校零
+            //如果突然又按下了校零
             if (m_bPressZero) {
                 if (dbMianZhuanJiao > 180)
                     dbMianZhuanJiao -= 360;
@@ -348,9 +354,9 @@ public class OperateDevActivity extends Activity {
                 double minus2 = (Double.parseDouble(sJianQ) - Double.parseDouble(sRecordJianQ));
                 minus2 = minus2 > 180 ? minus2 - (double) 360 : minus2;
                 if (minus2 > 0)
-                    sminus2 = "下";
+                    sminus2 = "收";
                 else
-                    sminus2 = "上";
+                    sminus2 = "抬";
 
                 String sminus3;
                 double minus3 = (Double.parseDouble(sMianZ) - Double.parseDouble(sRecordMianZ));
@@ -360,9 +366,9 @@ public class OperateDevActivity extends Activity {
                 else
                     sminus3 = "右";
                 //
-                s1 = String.format("%.1f", Math.abs(minus1));
-                s2 = String.format("%.1f", Math.abs(minus2));
-                s3 = String.format("%.1f", Math.abs(minus3));
+                String s1 = String.format("%.1f", Math.abs(minus1));
+                String s2 = String.format("%.1f", Math.abs(minus2));
+                String s3 = String.format("%.1f", Math.abs(minus3));
                 //
                 m_tvJianQing2.setText(s1 + "°" + sminus1);
                 m_tvXiaHe2.setText(s2 + "°" + sminus2);
@@ -370,10 +376,6 @@ public class OperateDevActivity extends Activity {
             }
         }
     }
-
-    String s1;
-    String s2;
-    String s3;
 
     @Override
     protected void onStop() {
@@ -387,6 +389,22 @@ public class OperateDevActivity extends Activity {
                 e.printStackTrace();
             }
         }
+    }
+
+    private void disconnectReset() {
+        m_tvJianQing1.setText("0");
+        m_tvXiaHe1.setText("0");
+        m_tvMianZhuan1.setText("0");
+        m_tvJianQing2.setText("0");
+        m_tvXiaHe2.setText("0");
+        m_tvMianZhuan2.setText("0");
+        sJianQ = "";
+        sXiaH = "";
+        sMianZ = "";
+        sRecordJianQ = "";
+        sRecordMianZ = "";
+        sRecordXiaH = "";
+        m_bFirstZero = true;
     }
 
 }
